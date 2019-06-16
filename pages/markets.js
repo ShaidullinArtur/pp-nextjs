@@ -2,11 +2,15 @@ import React from 'react';
 import axios from "axios";
 import Header from '../components/header';
 import { Link } from '../routes'
+import getConfig from 'next/config'
+
+const { publicRuntimeConfig } = getConfig()
+const { API_URL } = publicRuntimeConfig
 
 class Markets extends React.Component {
   static async getInitialProps() {
     return axios
-      .get("http://localhost:5000/v1/markets.json")
+      .get(`${API_URL}/v1/markets.json`)
       .then(response => {
           return {
               markets: response.data.markets

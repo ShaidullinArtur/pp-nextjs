@@ -1,11 +1,15 @@
 import React from 'react';
 import axios from "axios";
 import Header from '../../components/header';
+import getConfig from 'next/config'
+
+const { publicRuntimeConfig } = getConfig()
+const { API_URL } = publicRuntimeConfig
 
 class Location extends React.Component {
   static async getInitialProps({ query, res }) {
     return axios
-      .get(`http://localhost:5000/v1/locations/${query.id}.json`)
+      .get(`${API_URL}/v1/locations/${query.id}.json`)
       .then(response => {
           return {
               location: response.data

@@ -1,11 +1,16 @@
 import React from 'react';
 import axios from "axios";
 import Header from '../../../components/header';
+import getConfig from 'next/config'
+import { withRouter } from 'next/router'
+
+const { publicRuntimeConfig } = getConfig()
+const { API_URL } = publicRuntimeConfig
 
 class Location extends React.Component {
   static async getInitialProps({ query, res }) {
     return axios
-      .get(`http://localhost:5000/v1/locations/${query.location_id}.json`)
+      .get(`${API_URL}/v1/locations/${query.location_id}.json`)
       .then(response => {
           return {
               location: response.data
@@ -16,7 +21,7 @@ class Location extends React.Component {
   render() {
     return <div>
       <Header/>
-      <h2>Market #{this.props.url.query.market_id}, Location - {this.props.location.name}</h2>
+      <h2>Market #{this.props.router.query.market_id}, Location - {this.props.location.name}</h2>
       <ul>
         <li key="1">{this.props.location.id}</li>
         <li key="2">{this.props.location.name}</li>
@@ -26,4 +31,4 @@ class Location extends React.Component {
   }
 }
 
-export default Location;
+export default withRouter(Location);
