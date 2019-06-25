@@ -1,8 +1,10 @@
-import React from 'react';
-import { Link, Router } from '../routes'
-import cookie from 'js-cookie'
+import React, { Component } from 'react';
+import { Link, Router } from '../../../routes';
+import cookie from 'js-cookie';
+import PrimaryNavigation from '../../molecules/PrimaryNavigation';
 
-class Header extends React.Component {
+
+class Header extends Component {
   render() {
     return <ul>
       <li>

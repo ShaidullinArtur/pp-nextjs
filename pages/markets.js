@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from "axios";
-import Header from '../components/header';
+import Index from '../components/organisms/Header';
 import { Link } from '../routes'
 import getConfig from 'next/config'
 
@@ -20,7 +20,7 @@ class Markets extends React.Component {
 
   render() {
     return <div>
-      <Header/>
+      <Index/>
       <h2>List of markets</h2>
       <ul>
         {this.props.markets.map(market => (

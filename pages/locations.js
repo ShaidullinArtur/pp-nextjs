@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from "axios";
-import Header from '../components/header';
+import Header from '../components/organisms/Header';
 import { Link } from '../routes'
 import getConfig from 'next/config'
 

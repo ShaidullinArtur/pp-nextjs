@@ -1,12 +1,19 @@
-import React from 'react';
-import Header from '../components/header';
+import React, { Component } from 'react';
+import MainTemplate from '../components/templates/MainTemplate';
 
-class Home extends React.Component {
+import styled from 'styled-components';
+
+const Title = styled.h1`
+  color: red;
+`;
+
+class Home extends Component {
   render() {
-    return <div>
-      <Header/>
-      <p>Hello World</p>
-    </div>;
+    return (
+      <MainTemplate>
+        <Title>Hello world</Title>
+      </MainTemplate>
+    )
   }
 }
 
