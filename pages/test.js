@@ -1,9 +1,9 @@
 import cowsay from 'cowsay-browser';
-import Header from '../components/header';
+import Index from '../components/organisms/Header';
 
 function CowsayHi() {
   return <div>
-    <Header/>
+    <Index/>
     <pre>{cowsay.say({ text: 'hi there!' })}</pre>;
   </div>
 }

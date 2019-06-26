@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from "axios";
-import Header from '../../../components/header';
+import Index from '../../../components/organisms/Header';
 import getConfig from 'next/config'
 import { withRouter } from 'next/router'
 
@@ -20,7 +20,7 @@ class Location extends React.Component {
 
   render() {
     return <div>
-      <Header/>
+      <Index/>
       <h2>Market #{this.props.router.query.market_id}, Location - {this.props.location.name}</h2>
       <ul>
         <li key="1">{this.props.location.id}</li>

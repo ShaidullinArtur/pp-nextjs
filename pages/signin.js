@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from "axios";
-import Header from '../components/header';
+import Index from '../components/organisms/Header';
 import { Link, Router } from '../routes'
 import getConfig from 'next/config'
 import cookie from 'js-cookie'
@@ -34,7 +34,7 @@ function Signin() {
 
   return (
     <div>
-      <Header/>
+      <Index/>
       <form onSubmit={handleSubmit}>
         <input
           value={login}
