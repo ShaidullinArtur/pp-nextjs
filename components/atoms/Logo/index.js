@@ -1,9 +1,11 @@
 import React from 'react';
-import { Link, Router } from '../../../routes'
+import Link from 'next/Link'
 
-const Logo = () => (
+const Logo = props => (
   <Link href="/">
-    <img src="" alt=""/>
+    <a>
+      {props.children}
+    </a>
   </Link>
 );
 

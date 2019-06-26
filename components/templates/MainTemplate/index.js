@@ -1,15 +1,23 @@
 import React from 'react';
+import styled from 'styled-components';
+
 import Header from '../../organisms/Header';
 import Footer from '../../organisms/Footer';
 
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+`;
+
 const MainTemplate = ({ children }) => (
-  <div>
+  <Wrapper>
     <Header />
     <div>
       {children}
     </div>
     <Footer />
-  </div>
+  </Wrapper>
 );
 
 export default MainTemplate;
