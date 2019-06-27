@@ -31,14 +31,20 @@ const OverlayNavContent = styled.ul`
 `;
 
 const OverlayNavItem = styled.li`
-  text-decoration: none;
-  font-size: var(--font-size-xl);
-  color: #fff;
-  display: block;
+  margin-top: 20px
+`;
+
+const OverlayNavLink = styled.a`
+  display: inline-block;
   line-height: 1.15;
   transition: 0.3s;
+  font-size: var(--font-size-xl);
+  color: #fff;
   letter-spacing: -0.035em;
-  margin-top: 20px
+  
+  &:hover, &:focus, &:visited {
+    color: #fff;
+  }
 `;
 
 const Button = styled.button`
@@ -68,30 +74,60 @@ const PrimaryNavigation = () => {
         <CrossIcon/>
       </Button>
       <OverlayNavContent>
-        <Link>
-          <OverlayNavItem>Find Parking.</OverlayNavItem>
-        </Link>
-        <Link>
-          <OverlayNavItem>Explore Products.</OverlayNavItem>
-        </Link>
-        <Link>
-          <OverlayNavItem>Management Solutions.</OverlayNavItem>
-        </Link>
-        <Link>
-          <OverlayNavItem>Our Work.</OverlayNavItem>
-        </Link>
-        <Link>
-          <OverlayNavItem>Blog.</OverlayNavItem>
-        </Link>
-        <Link>
-          <OverlayNavItem>About us.</OverlayNavItem>
-        </Link>
-        <Link>
-          <OverlayNavItem>Careers.</OverlayNavItem>
-        </Link>
-        <Link>
-          <OverlayNavItem>Contact.</OverlayNavItem>
-        </Link>
+        <OverlayNavItem>
+          <Link href="/find_parking">
+            <OverlayNavLink>
+              Find Parking.
+            </OverlayNavLink>
+          </Link>
+        </OverlayNavItem>
+        <OverlayNavItem>
+          <Link href="/explore_products">
+            <OverlayNavLink>
+              Explore Products.
+            </OverlayNavLink>
+          </Link>
+        </OverlayNavItem>
+        <OverlayNavItem>
+          <Link href="/management_solutions">
+            <OverlayNavLink>
+              Management Solutions.
+            </OverlayNavLink>
+          </Link>
+        </OverlayNavItem>
+        <OverlayNavItem>
+          <Link href="/our_work">
+            <OverlayNavLink>
+              Our Work.
+            </OverlayNavLink>
+          </Link>
+        </OverlayNavItem>
+        <OverlayNavItem>
+          <Link href="/blog">
+            <OverlayNavLink>Blog.</OverlayNavLink>
+          </Link>
+        </OverlayNavItem>
+        <OverlayNavItem>
+          <Link href="/about_us">
+            <OverlayNavLink>
+              About us.
+            </OverlayNavLink>
+          </Link>
+        </OverlayNavItem>
+        <OverlayNavItem>
+          <Link href="/careers">
+            <OverlayNavLink>
+              Careers.
+            </OverlayNavLink>
+          </Link>
+        </OverlayNavItem>
+        <OverlayNavItem>
+          <Link href="/contact">
+            <OverlayNavLink>
+              Contact.
+            </OverlayNavLink>
+          </Link>
+        </OverlayNavItem>
       </OverlayNavContent>
     </OverlayNav>
   )
