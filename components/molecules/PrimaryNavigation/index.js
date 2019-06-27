@@ -42,10 +42,12 @@ const OverlayNavItem = styled.li`
 `;
 
 const Button = styled.button`
+  background: none;
   border: none;
   outline: none;
   cursor: pointer;
   position: absolute;
+  
   &:active, &:hover, &:visited {
     background: none;
   }
