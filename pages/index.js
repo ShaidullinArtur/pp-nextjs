@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import MainTemplate from '../components/templates/MainTemplate';
-
 import styled from 'styled-components';
+
+import MainTemplate from '../components/templates/MainTemplate';
 
 const Title = styled.h1`
   color: red;

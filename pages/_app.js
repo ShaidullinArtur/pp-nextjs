@@ -2,6 +2,8 @@ import App, { Container } from 'next/app'
 import React from 'react'
 import { ThemeProvider } from 'styled-components'
 
+import '../static/stylesheets/index.css';
+
 const theme = {
   colors: {
     primary: '#0070f3'
