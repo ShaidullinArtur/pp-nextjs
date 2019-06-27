@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
-import '../static/css/index.css';
-
 import MainTemplate from '../components/templates/MainTemplate';
 
 const Title = styled.h1`
