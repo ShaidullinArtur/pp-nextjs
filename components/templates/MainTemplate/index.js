@@ -13,9 +13,9 @@ const Wrapper = styled.div`
 const MainTemplate = ({ children }) => (
   <Wrapper>
     <Header />
-    <div>
+    <main>
       {children}
-    </div>
+    </main>
     <Footer />
   </Wrapper>
 );
