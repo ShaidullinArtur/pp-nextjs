@@ -3,7 +3,7 @@ import { Link, Router } from '../../../routes';
 import cookie from 'js-cookie';
 import styled from 'styled-components';
 import PrimaryNavigation from '../../molecules/PrimaryNavigation';
-import MenuButton from '../../atoms/Buttons/MenuButton';
+import MenuButton from '../../atoms/buttons/MenuButton';
 import Logo from '../../atoms/Logo';
 import { ReactComponent as SignInIcon} from '../../../static/images/icons/signin_small_icon.svg';
 import logoFullIcon  from '../../../static/images/icons/logo_full.svg';
