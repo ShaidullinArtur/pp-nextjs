@@ -1,5 +1,5 @@
 import React from 'react';
-import Link from 'next/Link'
+import { Link, Router } from '../../../routes';
 
 const Logo = props => (
   <Link href="/">

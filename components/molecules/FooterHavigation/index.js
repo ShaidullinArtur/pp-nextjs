@@ -1,5 +1,5 @@
 import React from 'react';
-import Link from 'next/Link';
+import { Link, Router } from '../../../routes';
 import styled from 'styled-components';
 
 const Navigation = styled.div`
