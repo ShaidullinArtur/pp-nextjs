@@ -41,7 +41,7 @@ const CarouselWrapper = styled.div`
 
 const Image = styled.div`
   height: 100%;
-  background-image: url('https://picsum.photos/id/305/1300/700');
+  background-image: url('https://picsum.photos/id/299/1300/700');
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
