@@ -13,8 +13,12 @@ const StyledHeader = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: black;
-  padding: 15px 20px
+  background-color: transparent;
+  padding: 15px 20px;
+  position: absolute;
+  z-index: 100;
+  top: 0;
+  width: 100%;
 `;
 
 const HeaderRight = styled.div`

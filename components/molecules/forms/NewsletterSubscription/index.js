@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Input from '../../../atoms/Forms/Input';
-import ButtonArrow from '../../../atoms/Buttons/ButtonArrow';
+import Input from '../../../atoms/forms/Input';
+import ButtonArrow from '../../../atoms/buttons/ButtonArrow';
 
 const Wrapper = styled.section`
   background-color: #f3f3f3;
