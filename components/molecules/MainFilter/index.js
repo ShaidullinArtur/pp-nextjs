@@ -1,7 +1,5 @@
-import React from 'react';
+import React from "react";
 
-const MainFilter = () => (
-  <div></div>
-);
+const MainFilter = () => <div />;
 
 export default MainFilter;

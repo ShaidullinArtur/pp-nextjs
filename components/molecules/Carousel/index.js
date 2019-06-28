@@ -1,9 +1,8 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
-import Select from '../../atoms/forms/Select';
-import Input from '../../atoms/forms/Input';
-import ButtonArrow from '../../atoms/buttons/ButtonArrow';
+import Input from "../../atoms/forms/Input";
+import ButtonArrow from "../../atoms/buttons/ButtonArrow";
 
 const Wrapper = styled.section`
   position: relative;
@@ -41,7 +40,7 @@ const CarouselWrapper = styled.div`
 
 const Image = styled.div`
   height: 100%;
-  background-image: url('https://picsum.photos/id/299/1300/700');
+  background-image: url("https://picsum.photos/id/299/1300/700");
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -62,15 +61,19 @@ const Carousel = () => (
     <Content>
       <Title>Park and explore your city.</Title>
       <Form>
-        {/*<Select />*/}
+        {/* <Select /> */}
         <InputWrapper>
-          <Input type="search" name="search" placeholder="Destination or Loaction #" />
+          <Input
+            type="search"
+            name="search"
+            placeholder="Destination or Loaction #"
+          />
         </InputWrapper>
         <ButtonArrow />
       </Form>
     </Content>
     <CarouselWrapper>
-      <Image></Image>
+      <Image />
     </CarouselWrapper>
   </Wrapper>
 );

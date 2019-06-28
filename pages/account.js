@@ -1,14 +1,14 @@
-import React from 'react';
+import React, { Component } from "react";
 import axios from "axios";
-import Header from '../components/organisms/Header';
-import { Link, Router } from '../routes'
-import getConfig from 'next/config'
-import cookie from 'js-cookie'
+import getConfig from "next/config";
+import cookie from "js-cookie";
+import Header from "../components/organisms/Header";
+import { Router } from "../routes";
 
-const { publicRuntimeConfig } = getConfig()
-const { API_URL } = publicRuntimeConfig
+const { publicRuntimeConfig } = getConfig();
+const { API_URL } = publicRuntimeConfig;
 
-class Account extends React.Component {
+class Account extends Component {
   constructor(props) {
     super(props);
 
@@ -19,33 +19,40 @@ class Account extends React.Component {
     console.log(cookie.get("auth_token"));
     return axios
       .get(`${API_URL}/v1/settings.json`, {
-        "headers": { "X-AUTH-TOKEN": cookie.get("auth_token")}
+        headers: { "X-AUTH-TOKEN": cookie.get("auth_token") }
       })
       .then(response => {
-          return {
-              profile: response.data.profile
-          };
+        return {
+          profile: response.data.profile
+        };
       });
   }
 
-  handleSignOut(event) {
+  handleSignOut = event => {
     event.preventDefault();
     cookie.remove("auth_token");
     Router.push("/");
-  }
+  };
 
   render() {
-    return <div>
-      <Header/>
-      <h2>Account #{this.props.profile.id} - {this.props.profile.name}</h2>
-      <ul>
-        <li key="1">{this.props.profile.id}</li>
-        <li key="2">{this.props.profile.name}</li>
-        <li key="3">{this.props.profile.email}</li>
-        <li key="4">{this.props.profile.phone}</li>
-      </ul>
-      <a href="#" onClick={this.handleSignOut}>SignOut</a>
-    </div>;
+    const { profile } = this.props;
+    return (
+      <div>
+        <Header />
+        <h2>
+          Account #{profile.id} - {profile.name}
+        </h2>
+        <ul>
+          <li key="1">{profile.id}</li>
+          <li key="2">{profile.name}</li>
+          <li key="3">{profile.email}</li>
+          <li key="4">{profile.phone}</li>
+        </ul>
+        <button type="button" onClick={this.handleSignOut}>
+          SignOut
+        </button>
+      </div>
+    );
   }
 }
 

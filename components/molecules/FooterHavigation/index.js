@@ -1,6 +1,6 @@
-import React from 'react';
-import { Link, Router } from '../../../routes';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
+import { Link } from "../../../routes";
 
 const Navigation = styled.div`
   max-width: 78.75rem;
@@ -9,12 +9,12 @@ const Navigation = styled.div`
   display: grid;
   grid-template-rows: auto;
   grid-row-gap: 40px;
-  
+
   @media screen and (min-width: 901px) {
     grid-column-gap: 40px;
     grid-template-columns: repeat(5, 1fr);
   }
-  
+
   @media screen and (max-width: 901px) {
     grid-column-gap: 20px;
     grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
@@ -35,7 +35,7 @@ const List = styled.ul`
 
 const ListItem = styled.li`
   margin-top: 10px;
-  
+
   @media screen and (max-width: 768px) {
     margin-top: 0;
   }
@@ -43,7 +43,7 @@ const ListItem = styled.li`
 
 const ListLink = styled.a`
   font-size: var(--font-size-xs);
-  
+
   &:hover {
     color: #d21115;
   }

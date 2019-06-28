@@ -1,7 +1,7 @@
-import React from 'react';
-import { Link, Router } from '../../../routes';
-import styled from 'styled-components';
-import { ReactComponent as CrossIcon } from '../../../static/images/icons/cross_icon.svg';
+import React from "react";
+import styled from "styled-components";
+import { Link } from "../../../routes";
+import { ReactComponent as CrossIcon } from "../../../static/images/icons/cross_icon.svg";
 
 const OverlayNav = styled.nav`
   display: flex;
@@ -17,9 +17,9 @@ const OverlayNav = styled.nav`
   opacity: 0.9;
   overflow-y: hidden;
   transition: 0.25s;
-  
+
   @media screen and (max-height: 450px) {
-    overflow-y: auto
+    overflow-y: auto;
   }
 `;
 
@@ -31,7 +31,7 @@ const OverlayNavContent = styled.ul`
 `;
 
 const OverlayNavItem = styled.li`
-  margin-top: 20px
+  margin-top: 20px;
 `;
 
 const OverlayNavLink = styled.a`
@@ -41,8 +41,10 @@ const OverlayNavLink = styled.a`
   font-size: var(--font-size-xl);
   color: #fff;
   letter-spacing: -0.035em;
-  
-  &:hover, &:focus, &:visited {
+
+  &:hover,
+  &:focus,
+  &:visited {
     color: #fff;
   }
 `;
@@ -53,8 +55,10 @@ const Button = styled.button`
   outline: none;
   cursor: pointer;
   position: absolute;
-  
-  &:active, &:hover, &:visited {
+
+  &:active,
+  &:hover,
+  &:visited {
     background: none;
   }
   right: 0;
@@ -65,41 +69,33 @@ const Button = styled.button`
 
 const PrimaryNavigation = () => {
   const handleClick = () => {
-    document.getElementById('overlay').style.height = "0%"
+    document.getElementById("overlay").style.height = "0%";
   };
 
   return (
-    <OverlayNav id='overlay'>
+    <OverlayNav id="overlay">
       <Button onClick={handleClick}>
-        <CrossIcon/>
+        <CrossIcon />
       </Button>
       <OverlayNavContent>
         <OverlayNavItem>
           <Link href="/find_parking">
-            <OverlayNavLink>
-              Find Parking.
-            </OverlayNavLink>
+            <OverlayNavLink>Find Parking.</OverlayNavLink>
           </Link>
         </OverlayNavItem>
         <OverlayNavItem>
           <Link href="/explore_products">
-            <OverlayNavLink>
-              Explore Products.
-            </OverlayNavLink>
+            <OverlayNavLink>Explore Products.</OverlayNavLink>
           </Link>
         </OverlayNavItem>
         <OverlayNavItem>
           <Link href="/management_solutions">
-            <OverlayNavLink>
-              Management Solutions.
-            </OverlayNavLink>
+            <OverlayNavLink>Management Solutions.</OverlayNavLink>
           </Link>
         </OverlayNavItem>
         <OverlayNavItem>
           <Link href="/our_work">
-            <OverlayNavLink>
-              Our Work.
-            </OverlayNavLink>
+            <OverlayNavLink>Our Work.</OverlayNavLink>
           </Link>
         </OverlayNavItem>
         <OverlayNavItem>
@@ -109,27 +105,21 @@ const PrimaryNavigation = () => {
         </OverlayNavItem>
         <OverlayNavItem>
           <Link href="/about_us">
-            <OverlayNavLink>
-              About us.
-            </OverlayNavLink>
+            <OverlayNavLink>About us.</OverlayNavLink>
           </Link>
         </OverlayNavItem>
         <OverlayNavItem>
           <Link href="/careers">
-            <OverlayNavLink>
-              Careers.
-            </OverlayNavLink>
+            <OverlayNavLink>Careers.</OverlayNavLink>
           </Link>
         </OverlayNavItem>
         <OverlayNavItem>
           <Link href="/contact">
-            <OverlayNavLink>
-              Contact.
-            </OverlayNavLink>
+            <OverlayNavLink>Contact.</OverlayNavLink>
           </Link>
         </OverlayNavItem>
       </OverlayNavContent>
     </OverlayNav>
-  )
+  );
 };
 export default PrimaryNavigation;

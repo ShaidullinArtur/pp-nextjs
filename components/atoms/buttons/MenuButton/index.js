@@ -1,12 +1,14 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
 const StyledButton = styled.button`
   background: none;
   border: none;
   outline: none;
   cursor: pointer;
-  &:active, &:hover, &:visited {
+  &:active,
+  &:hover,
+  &:visited {
     background: none;
   }
 `;
@@ -23,25 +25,25 @@ const HamburgerIcon = styled.div`
 
 const HamburgerIconPart = styled.span`
   width: 1.5625rem;
-  height: .25rem;
+  height: 0.25rem;
   background-color: #fff;
-  margin-top: .3125rem;
-  
+  margin-top: 0.3125rem;
+
   &:first-child {
-    margin-top: 0
+    margin-top: 0;
   }
 `;
 
-const MenuButton = ({onClick}) => {
-    return (
-        <StyledButton onClick={onClick}>
-            <HamburgerIcon>
-                <HamburgerIconPart/>
-                <HamburgerIconPart/>
-                <HamburgerIconPart/>
-            </HamburgerIcon>
-        </StyledButton>
-    )
+const MenuButton = ({ onClick }) => {
+  return (
+    <StyledButton onClick={onClick}>
+      <HamburgerIcon>
+        <HamburgerIconPart />
+        <HamburgerIconPart />
+        <HamburgerIconPart />
+      </HamburgerIcon>
+    </StyledButton>
+  );
 };
 
 export default MenuButton;

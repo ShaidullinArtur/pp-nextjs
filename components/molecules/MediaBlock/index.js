@@ -1,8 +1,5 @@
-import React from 'react';
-import { Link, Router } from '../../../routes'
+import React from "react";
 
-const MediaBlock = () => (
-  <div></div>
-);
+const MediaBlock = () => <div />;
 
 export default MediaBlock;
