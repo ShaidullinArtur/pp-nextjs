@@ -68,6 +68,17 @@ const Form = styled.form`
 
 const CarouselWrapper = styled.div`
   height: calc(100vh - 90px);
+  overflow: hidden;
+
+  div {
+    height: 100%;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 `;
 
 const Carousel = () => {
@@ -75,9 +86,9 @@ const Carousel = () => {
     dots: true,
     arrows: false,
     infinite: true,
-    autoplay: false,
+    autoplay: true,
     fade: true,
-    speed: 100
+    speed: 500
   };
 
   return (
