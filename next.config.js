@@ -13,16 +13,4 @@ const nextConfig = {
   }
 };
 
-module.exports = withPlugins(
-  [
-    [
-      nextCSS,
-      {
-        cssModules: true
-      }
-    ],
-    nextImages,
-    svgr
-  ],
-  nextConfig
-);
+module.exports = withPlugins([nextCSS, nextImages, svgr], nextConfig);

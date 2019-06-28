@@ -1,14 +1,14 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
-import { ReactComponent as ArrowRight } from '../../../../static/images/icons/arrow_right.svg';
+import { ReactComponent as ArrowRight } from "../../../../static/images/icons/arrow_right.svg";
 
 const Button = styled.button`
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  font-size: .8125rem;
-  padding: .9375rem 1.25rem .8125rem;
+  font-size: 0.8125rem;
+  padding: 0.9375rem 1.25rem 0.8125rem;
   line-height: 1.2;
   color: #fff;
   cursor: pointer;
@@ -22,13 +22,14 @@ const Button = styled.button`
   background: linear-gradient(to right, #a30d10 50%, #d21115 50%);
   background-size: 300% 150%;
   background-position: right 0 bottom 0;
-  
+
   &:hover {
     background-position: left 0 bottom 0;
   }
-  
+
   svg {
     width: 30px;
+    height: 30px;
   }
 `;
 

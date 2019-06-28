@@ -1,8 +1,13 @@
 import React from "react";
 import styled from "styled-components";
+import Slider from "react-slick";
 
+import Select from "../../atoms/forms/Select";
 import Input from "../../atoms/forms/Input";
 import ButtonArrow from "../../atoms/buttons/ButtonArrow";
+
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const Wrapper = styled.section`
   position: relative;
@@ -32,50 +37,78 @@ const Form = styled.form`
   margin: 0 auto;
   width: 100%;
   margin-top: 40px;
+
+  @media screen and (max-width: 501px) {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+  select {
+    width: calc((100% - 79px) / 2);
+
+    @media screen and (max-width: 501px) {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  }
+
+  input {
+    width: calc((100% - 79px) / 2);
+    margin-left: 5px;
+    margin-right: 10px;
+    border: 0;
+    border-radius: 0;
+
+    @media screen and (max-width: 501px) {
+      width: 100%;
+      margin: 0 0 10px;
+    }
+  }
 `;
 
 const CarouselWrapper = styled.div`
   height: calc(100vh - 90px);
 `;
 
-const Image = styled.div`
-  height: 100%;
-  background-image: url("https://picsum.photos/id/299/1300/700");
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-`;
+const Carousel = () => {
+  const settings = {
+    dots: true,
+    arrows: false,
+    infinite: true,
+    autoplay: false,
+    fade: true,
+    speed: 100
+  };
 
-const InputWrapper = styled.div`
-  width: 100%;
-  margin-right: 5px;
-
-  input {
-    border: 0;
-    border-radius: 0;
-  }
-`;
-
-const Carousel = () => (
-  <Wrapper>
-    <Content>
-      <Title>Park and explore your city.</Title>
-      <Form>
-        {/* <Select /> */}
-        <InputWrapper>
+  return (
+    <Wrapper>
+      <Content>
+        <Title>Park and explore your city.</Title>
+        <Form>
+          <Select />
           <Input
             type="search"
             name="search"
             placeholder="Destination or Loaction #"
           />
-        </InputWrapper>
-        <ButtonArrow />
-      </Form>
-    </Content>
-    <CarouselWrapper>
-      <Image />
-    </CarouselWrapper>
-  </Wrapper>
-);
+          <ButtonArrow />
+        </Form>
+      </Content>
+      <CarouselWrapper>
+        <Slider {...settings}>
+          <div>
+            <img src="https://picsum.photos/id/290/1300/700" alt="" />
+          </div>
+          <div>
+            <img src="https://picsum.photos/id/291/1300/700" alt="" />
+          </div>
+          <div>
+            <img src="https://picsum.photos/id/292/1300/700" alt="" />
+          </div>
+        </Slider>
+      </CarouselWrapper>
+    </Wrapper>
+  );
+};
 
 export default Carousel;
