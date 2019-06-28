@@ -1,40 +1,42 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import axios from "axios";
-import Index from '../components/organisms/Header';
-import { Link, Router } from '../routes'
-import getConfig from 'next/config'
-import cookie from 'js-cookie'
+import getConfig from "next/config";
+import cookie from "js-cookie";
+import Header from "../components/organisms/Header";
+import { Router } from "../routes";
 
-const { publicRuntimeConfig } = getConfig()
-const { API_URL } = publicRuntimeConfig
+const { publicRuntimeConfig } = getConfig();
+const { API_URL } = publicRuntimeConfig;
 
 function Signin() {
   const [login, setLogin] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
-  function handleSubmit (event) {
+  function handleSubmit(event) {
     event.preventDefault();
 
     return axios
       .post(`${API_URL}/v1/signin.json`, {
         profile: {
-          login: login,
-          password: password
+          login,
+          password
         }
       })
       .then(response => {
-        cookie.set("auth_token", response.data.profile.auth_token, { expires: 365 })
+        cookie.set("auth_token", response.data.profile.auth_token, {
+          expires: 365
+        });
         Router.push("/account");
       })
-      .catch(error => {
-        setError(error.response.data.error);
+      .catch(catchedError => {
+        setError(catchedError.response.data.error);
       });
   }
 
   return (
     <div>
-      <Index/>
+      <Header />
       <form onSubmit={handleSubmit}>
         <input
           value={login}
@@ -44,7 +46,7 @@ function Signin() {
           name="login"
           required
         />
-        <br/>
+        <br />
         <input
           value={password}
           onChange={e => setPassword(e.target.value)}
@@ -53,11 +55,9 @@ function Signin() {
           name="lastName"
           required
         />
-        <br/>
-        {error &&
-          <strong>{error}</strong>
-        }
-        <br/>
+        <br />
+        {error && <strong>{error}</strong>}
+        <br />
         <button type="submit">Submit</button>
       </form>
     </div>

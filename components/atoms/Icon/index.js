@@ -1,9 +1,9 @@
-import React from 'react';
-import { Link } from '../../../routes'
+import React from "react";
+import { Link } from "../../../routes";
 
 const Icon = () => (
   <Link href="/">
-    <img src="" alt=""/>
+    <img src="" alt="" />
   </Link>
 );
 

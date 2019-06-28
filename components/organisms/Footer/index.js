@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
-import FooterNavigation from '../../molecules/FooterHavigation';
-import FooterSlim from '../../molecules/FooterSlim';
+import FooterNavigation from "../../molecules/FooterHavigation";
+import FooterSlim from "../../molecules/FooterSlim";
 
 const Wrapper = styled.footer`
   background-color: #f3f3f3;
@@ -11,15 +11,13 @@ const Wrapper = styled.footer`
   border-top: 1px solid #adadad;
 `;
 
-class Footer extends Component {
-  render() {
-    return (
-      <Wrapper>
-        <FooterNavigation />
-        <FooterSlim />
-      </Wrapper>
-    )
-  }
-}
+const Footer = () => {
+  return (
+    <Wrapper>
+      <FooterNavigation />
+      <FooterSlim />
+    </Wrapper>
+  );
+};
 
 export default Footer;

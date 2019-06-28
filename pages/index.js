@@ -1,19 +1,17 @@
-import React, { Component } from 'react';
+import React from "react";
 
-import MainTemplate from '../components/templates/MainTemplate';
-import NewsletterSubscription from '../components/molecules/forms/NewsletterSubscription';
-import Carousel from '../components/molecules/Carousel';
+import MainTemplate from "../components/templates/MainTemplate";
+import NewsletterSubscription from "../components/molecules/forms/NewsletterSubscription";
+import Carousel from "../components/molecules/Carousel";
 
-class Home extends Component {
-  render() {
-    return (
-      <MainTemplate>
-        <Carousel />
+const Home = () => {
+  return (
+    <MainTemplate>
+      <Carousel />
 
-        <NewsletterSubscription />
-      </MainTemplate>
-    )
-  }
-}
+      <NewsletterSubscription />
+    </MainTemplate>
+  );
+};
 
 export default Home;

@@ -1,11 +1,9 @@
-import React from 'react';
-import { Link, Router } from '../../../routes';
+import React from "react";
+import { Link } from "../../../routes";
 
-const Logo = props => (
+const Logo = ({ children }) => (
   <Link href="/">
-    <a>
-      {props.children}
-    </a>
+    <a>{children}</a>
   </Link>
 );
 

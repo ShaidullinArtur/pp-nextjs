@@ -1,7 +1,5 @@
-import React from 'react';
+import React from "react";
 
-const ButtonOutline = () => (
-  <button></button>
-);
+const ButtonOutline = () => <button type="button" />;
 
 export default ButtonOutline;
