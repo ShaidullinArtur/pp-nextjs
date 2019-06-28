@@ -1,19 +1,17 @@
 import React from "react";
 import axios from "axios";
-import getConfig from "next/config";
 import Header from "../components/organisms/Header";
 import { Link } from "../routes";
 
-const { publicRuntimeConfig } = getConfig();
-const { API_URL } = publicRuntimeConfig;
-
 class Locations extends React.Component {
   static async getInitialProps() {
-    return axios.get(`${API_URL}/v1/locations.json`).then(response => {
-      return {
-        locations: response.data.locations
-      };
-    });
+    return axios
+      .get(`${process.env.API_HOST}/v1/locations.json`)
+      .then(response => {
+        return {
+          locations: response.data.locations
+        };
+      });
   }
 
   render() {
