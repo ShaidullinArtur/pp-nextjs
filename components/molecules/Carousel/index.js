@@ -79,6 +79,25 @@ const CarouselWrapper = styled.div`
     height: 100%;
     object-fit: cover;
   }
+
+  .slick-slider-dots .slick-dots {
+    bottom: 10px;
+  }
+
+  .slick-slider-dots .slick-dots li {
+    margin: 0;
+  }
+
+  .slick-slider-dots .slick-dots li button:before {
+    color: white;
+    font-size: 30px;
+    opacity: 1;
+  }
+
+  .slick-slider-dots .slick-dots .slick-active button:before {
+    opacity: 1;
+    color: #d21115;
+  }
 `;
 
 const Carousel = () => {
@@ -87,7 +106,10 @@ const Carousel = () => {
     arrows: false,
     infinite: true,
     autoplay: true,
+    lazyLoad: true,
+    adaptiveHeight: true,
     fade: true,
+    className: "slick-slider-dots",
     speed: 500
   };
 
