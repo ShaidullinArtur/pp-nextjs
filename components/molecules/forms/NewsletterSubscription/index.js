@@ -1,8 +1,9 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
-import Input from '../../../atoms/forms/Input';
-import ButtonArrow from '../../../atoms/buttons/ButtonArrow';
+import Input from "../../../atoms/forms/Input";
+import ButtonArrow from "../../../atoms/buttons/Button";
+import { ReactComponent as ArrowRight } from "../../../../static/images/icons/arrow_right.svg";
 
 const Wrapper = styled.section`
   background-color: #f3f3f3;
@@ -18,7 +19,7 @@ const LetterForm = styled.form`
   align-items: stretch;
   max-width: 25rem;
   margin: 20px auto 0;
-  
+
   input {
     border-radius: 0;
     border-color: #000;
@@ -33,7 +34,9 @@ const NewsletterSubscription = () => (
     <Title>Join our mailing list.</Title>
     <LetterForm>
       <Input type="email" name="email" placeholder="Your email address" />
-      <ButtonArrow />
+      <ButtonArrow>
+        <ArrowRight />
+      </ButtonArrow>
     </LetterForm>
   </Wrapper>
 );
