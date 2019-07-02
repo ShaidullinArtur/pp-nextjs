@@ -18,7 +18,7 @@ const Content = styled.div`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 3;
+  z-index: 2;
   width: 100%;
   max-width: 78.75rem;
   text-align: center;
