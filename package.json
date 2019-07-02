@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "dev": "npm run lint && node server.js",
+    "dev": "node server.js",
     "build": "next build",
     "start": "NODE_ENV=production node server.js",
     "heroku-postbuild": "npm run build",
@@ -20,6 +20,8 @@
     "next-svgr": "0.0.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-slick": "^0.24.0",
+    "slick-carousel": "^1.8.1",
     "styled-components": "^4.3.2"
   },
   "engines": {
@@ -42,7 +44,8 @@
     "stylelint": "^10.1.0",
     "stylelint-config-standard": "^18.3.0",
     "stylelint-config-styled-components": "^0.1.1",
-    "stylelint-processor-styled-components": "^1.8.0"
+    "stylelint-processor-styled-components": "^1.8.0",
+    "url-loader": "^2.0.1"
   },
   "husky": {
     "hooks": {

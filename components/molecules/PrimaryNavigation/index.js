@@ -10,7 +10,7 @@ const OverlayNav = styled.nav`
   height: 0%;
   width: 100%;
   position: fixed;
-  z-index: 1;
+  z-index: 99;
   top: 0;
   left: 0;
   background-color: #d21115;
