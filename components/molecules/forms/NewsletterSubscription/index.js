@@ -1,9 +1,9 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
-import Input from "../../../atoms/forms/Input";
-import ButtonArrow from "../../../atoms/buttons/Button";
-import { ReactComponent as ArrowRight } from "../../../../static/images/icons/arrow_right.svg";
+import Input from '../../../atoms/forms/Input';
+import ButtonArrow from '../../../atoms/buttons/Button';
+import { ReactComponent as ArrowRight } from '../../../../static/images/icons/arrow_right.svg';
 
 const Wrapper = styled.section`
   background-color: #f3f3f3;
