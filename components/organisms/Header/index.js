@@ -1,12 +1,8 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import { Link } from "../../../routes";
-import PrimaryNavigation from "../../molecules/PrimaryNavigation";
 import MenuButton from "../../atoms/buttons/MenuButton";
 import Logo from "../../atoms/Logo";
 import { ReactComponent as SignInIcon } from "../../../static/images/icons/signin_small_icon.svg";
-import logoFullIcon from "../../../static/images/icons/logo_full.svg";
-import logoIcon from "../../../static/images/icons/logo_white.svg";
 
 const StyledHeader = styled.header`
   display: flex;
@@ -15,7 +11,7 @@ const StyledHeader = styled.header`
   background-color: transparent;
   padding: 15px 20px;
   position: absolute;
-  z-index: 100;
+  z-index: 2;
   top: 0;
   width: 100%;
 `;
@@ -40,7 +36,11 @@ const SignInWrapper = styled.div`
   }
 `;
 
-const StyledLink = styled.a`
+const SignInButton = styled.button`
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
   color: #fff;
   font-size: var(--font-size-xs);
   margin-left: 10px;
@@ -53,38 +53,34 @@ const StyledLink = styled.a`
 `;
 
 const LogoIcon = styled.span`
-  background: url(${logoFullIcon}) no-repeat center;
+  background: url(/static/images/icons/logo_full.svg) no-repeat center;
   display: block;
   width: 153px;
   height: 46px;
 
   @media (max-width: 501px) {
     width: 46px;
-    background: url(${logoIcon}) no-repeat center;
+    background: url(/static/images/icons/logo_white.svg) no-repeat center;
   }
 `;
 
 class Header extends Component {
-  handleClick = () => {
+  openPrimaryNavigation = () => {
     document.getElementById("overlay").style.height = "100%";
   };
 
   render() {
     return (
       <StyledHeader>
-        <PrimaryNavigation />
         <Logo>
           <LogoIcon />
         </Logo>
         <HeaderRight>
-          <Link href="/signin">
-            <SignInWrapper>
-              <SignInIcon />
-              <StyledLink>Sign in</StyledLink>
-            </SignInWrapper>
-          </Link>
-
-          <MenuButton onClick={this.handleClick} />
+          <SignInWrapper>
+            <SignInIcon />
+            <SignInButton>Sign in</SignInButton>
+          </SignInWrapper>
+          <MenuButton onClick={this.openPrimaryNavigation} />
         </HeaderRight>
       </StyledHeader>
     );
