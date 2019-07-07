@@ -9,6 +9,9 @@ const Wrapper = styled.section`
   background-color: #f3f3f3;
   text-align: center;
   padding: 80px 20px;
+  margin: 0 auto;
+  position: relative;
+  width: 100%;
 `;
 
 const Title = styled.h5``;

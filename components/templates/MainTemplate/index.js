@@ -1,9 +1,9 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
-import Header from "../../organisms/Header";
-import Footer from "../../organisms/Footer";
-import PrimaryNavigation from "../../molecules/PrimaryNavigation";
+import Header from '../../organisms/Header';
+import Footer from '../../organisms/Footer';
+import PrimaryNavigation from '../../molecules/PrimaryNavigation';
 
 const Wrapper = styled.div`
   display: flex;
@@ -11,11 +11,16 @@ const Wrapper = styled.div`
   min-height: 100vh;
 `;
 
+const Main = styled.main`
+  display: flex;
+  flex-direction: column;
+`;
+
 const MainTemplate = ({ children }) => (
   <Wrapper>
     <PrimaryNavigation />
     <Header />
-    <main>{children}</main>
+    <Main>{children}</Main>
     <Footer />
   </Wrapper>
 );
