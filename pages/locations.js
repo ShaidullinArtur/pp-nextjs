@@ -6,7 +6,7 @@ import { Link } from "../routes";
 class Locations extends React.Component {
   static async getInitialProps() {
     return axios
-      .get(`${process.env.API_HOST}/v1/locations.json`)
+      .get(`${process.env.API_URL}/v1/locations.json`)
       .then(response => {
         return {
           locations: response.data.locations

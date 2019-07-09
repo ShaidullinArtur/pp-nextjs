@@ -1,12 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
-import getConfig from "next/config";
 import cookie from "js-cookie";
 import Header from "../components/organisms/Header";
 import { Router } from "../routes";
-
-const { publicRuntimeConfig } = getConfig();
-const { API_URL } = publicRuntimeConfig;
 
 function Signin() {
   const [login, setLogin] = useState("");
@@ -17,7 +13,7 @@ function Signin() {
     event.preventDefault();
 
     return axios
-      .post(`${API_URL}/v1/signin.json`, {
+      .post(`${process.env.API_URL}/v1/signin.json`, {
         profile: {
           login,
           password

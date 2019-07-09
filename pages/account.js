@@ -1,12 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
-import getConfig from "next/config";
 import cookie from "js-cookie";
 import Header from "../components/organisms/Header";
 import { Router } from "../routes";
-
-const { publicRuntimeConfig } = getConfig();
-const { API_URL } = publicRuntimeConfig;
 
 class Account extends Component {
   constructor(props) {
@@ -18,7 +14,7 @@ class Account extends Component {
   static async getInitialProps() {
     console.log(cookie.get("auth_token"));
     return axios
-      .get(`${API_URL}/v1/settings.json`, {
+      .get(`${process.env.API_URL}/v1/settings.json`, {
         headers: { "X-AUTH-TOKEN": cookie.get("auth_token") }
       })
       .then(response => {
