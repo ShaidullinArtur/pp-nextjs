@@ -1,11 +1,13 @@
-import React from 'react';
-import styled from 'styled-components';
-import MainTemplate from '../components/templates/MainTemplate';
-import NewsletterSubscription from '../components/molecules/forms/NewsletterSubscription';
-import Carousel from '../components/molecules/Carousel';
-import MediaBlock from '../components/molecules/MediaBlock';
-import Button from '../components/atoms/buttons/Button';
-import { ReactComponent as ArrowRight } from '../static/images/icons/arrow_right.svg';
+/* eslint-disable no-nested-ternary */
+
+import React from "react";
+import styled from "styled-components";
+import MainTemplate from "../components/templates/MainTemplate";
+import NewsletterSubscription from "../components/molecules/forms/NewsletterSubscription";
+import Carousel from "../components/molecules/Carousel";
+import MediaBlock from "../components/molecules/MediaBlock";
+import Button from "../components/atoms/buttons/Button";
+import { ReactComponent as ArrowRight } from "../static/images/icons/arrow_right.svg";
 
 const MediaBlocksContainer = styled.section`
   @media (min-width: 901px) {
@@ -37,17 +39,17 @@ const MediaBlocksGridContainer = styled.div`
 
 const MediaBlockTitle = styled.h2`
   color: var(--white);
+  margin-bottom: 20px;
 `;
 
 const HighlightText = styled.span`
   margin: 0 10px;
   color: ${props =>
-    // eslint-disable-next-line no-nested-ternary
     props.yellow
-      ? 'var(--tertiary)'
+      ? "var(--tertiary)"
       : props.primary
-      ? 'var(--primary)'
-      : 'var(--white)'};
+      ? "var(--primary)"
+      : "var(--white)"};
 `;
 
 const Home = () => {
