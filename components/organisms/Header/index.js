@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import styled from "styled-components";
 import MenuButton from "../../atoms/buttons/MenuButton";
 import Logo from "../../atoms/Logo";
-import { ReactComponent as SignInIcon } from "../../../static/images/icons/signin_small_icon.svg";
+import { ReactComponent as SignInIcon } from "../../../static/images/icons/signin_icon.svg";
 
 const StyledHeader = styled.header`
   display: flex;
@@ -33,6 +33,12 @@ const SignInWrapper = styled.div`
   @media (max-width: 501px) {
     margin-right: 0.9375rem;
     flex-direction: column;
+  }
+
+  svg {
+    height: 20px;
+    width: 20px;
+    fill: #fff;
   }
 `;
 
