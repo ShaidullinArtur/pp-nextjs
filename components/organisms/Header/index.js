@@ -75,6 +75,10 @@ class Header extends Component {
     document.getElementById("overlay").style.height = "100%";
   };
 
+  openLoginSection = () => {
+    document.getElementById("loginSection").style.height = "60vh";
+  };
+
   render() {
     return (
       <StyledHeader>
@@ -84,7 +88,7 @@ class Header extends Component {
         <HeaderRight>
           <SignInWrapper>
             <SignInIcon />
-            <SignInButton>Sign in</SignInButton>
+            <SignInButton onClick={this.openLoginSection}>Sign in</SignInButton>
           </SignInWrapper>
           <MenuButton onClick={this.openPrimaryNavigation} />
         </HeaderRight>
