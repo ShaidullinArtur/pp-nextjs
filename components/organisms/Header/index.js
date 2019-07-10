@@ -1,8 +1,8 @@
-import React, { Component } from "react";
-import styled from "styled-components";
-import MenuButton from "../../atoms/buttons/MenuButton";
-import Logo from "../../atoms/Logo";
-import { ReactComponent as SignInIcon } from "../../../static/images/icons/signin_small_icon.svg";
+import React, { Component } from 'react';
+import styled from 'styled-components';
+import MenuButton from '../../atoms/buttons/MenuButton';
+import Logo from '../../atoms/Logo';
+import { ReactComponent as SignInIcon } from '../../../static/images/icons/signin_small_icon.svg';
 
 const StyledHeader = styled.header`
   display: flex;
@@ -36,11 +36,7 @@ const SignInWrapper = styled.div`
   }
 `;
 
-const SignInButton = styled.button`
-  background: none;
-  border: none;
-  outline: none;
-  cursor: pointer;
+const SignInLabel = styled.span`
   color: #fff;
   font-size: var(--font-size-xs);
   margin-left: 10px;
@@ -66,7 +62,7 @@ const LogoIcon = styled.span`
 
 class Header extends Component {
   openPrimaryNavigation = () => {
-    document.getElementById("overlay").style.height = "100%";
+    document.getElementById('overlay').style.height = '100%';
   };
 
   render() {
@@ -78,7 +74,7 @@ class Header extends Component {
         <HeaderRight>
           <SignInWrapper>
             <SignInIcon />
-            <SignInButton>Sign in</SignInButton>
+            <SignInLabel>Sign in</SignInLabel>
           </SignInWrapper>
           <MenuButton onClick={this.openPrimaryNavigation} />
         </HeaderRight>

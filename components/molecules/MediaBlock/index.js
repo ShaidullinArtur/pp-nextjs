@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import LargeResponsiveImage from '../../atoms/images/LargeResponsiveImage';
-import MediumResponsiveImage from '../../atoms/images/MediumResponsiveImage';
+import MediaBlockImage from '../../atoms/images/MediaBlockImage';
 
 const MediaBlockWrapper = styled.div`
   opacity: 1;
@@ -81,12 +80,37 @@ const ImageWrap = styled.div`
   width: 100%;
 `;
 
+const srcSetsForLargeImage = {
+  large: 'https://picsum.photos/800/800?random',
+  medium: 'https://picsum.photos/500/500?random',
+  small: 'https://picsum.photos/600/600?random',
+};
+
+const srcSetsForMediumImage = {
+  large: 'https://picsum.photos/800/600?person',
+  medium: 'https://picsum.photos/500/375?person',
+  small: 'https://picsum.photos/600/450?person',
+};
+
+const srcSetsForSmallImage = {
+  large: 'https://picsum.photos/800/300?person',
+  medium: 'https://picsum.photos/600/300?person',
+  small: 'https://picsum.photos/600/200?person',
+};
+
 const MediaBlock = ({ size, children }) => (
   <MediaBlockWrapper>
     <MediaBlockLink>
       <ImageWrap>
-        {size === 'large' && <LargeResponsiveImage />}
-        {size === 'medium' && <MediumResponsiveImage />}
+        <MediaBlockImage
+          srcSets={
+            size === 'large'
+              ? srcSetsForLargeImage
+              : size === 'medium'
+              ? srcSetsForMediumImage
+              : srcSetsForSmallImage
+          }
+        />
       </ImageWrap>
       <MediaBlockContent>{children}</MediaBlockContent>
     </MediaBlockLink>

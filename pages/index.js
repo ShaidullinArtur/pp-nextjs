@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from '../routes';
 import MainTemplate from '../components/templates/MainTemplate';
 import NewsletterSubscription from '../components/molecules/forms/NewsletterSubscription';
 import Carousel from '../components/molecules/Carousel';
@@ -37,6 +38,12 @@ const MediaBlocksGridContainer = styled.div`
 
 const MediaBlockTitle = styled.h2`
   color: var(--white);
+  margin-bottom: 20px;
+`;
+
+const MediaBLockTitleSmall = styled.h3`
+  color: var(--white);
+  margin-bottom: 20px;
 `;
 
 const HighlightText = styled.span`
@@ -50,12 +57,31 @@ const HighlightText = styled.span`
       : 'var(--white)'};
 `;
 
+const StyledLink = styled.a`
+  color: var(--white);
+  text-decoration-line: underline;
+  font-size: var(--font-size-xs);
+
+  &:focus,
+  :hover,
+  :active {
+    color: var(--white);
+`;
+
 const Home = () => {
   return (
     <MainTemplate>
       <Carousel />
       <MediaBlocksContainer>
         <MediaBlocksGridContainer>
+          <MediaBlock size="small">
+            <MediaBLockTitleSmall>
+              FREE order of hush puppies. Plus 50% off parking.
+            </MediaBLockTitleSmall>
+            <Link href="/">
+              <StyledLink>Details</StyledLink>
+            </Link>
+          </MediaBlock>
           <MediaBlock size="medium">
             <MediaBlockTitle>So many ways to park.</MediaBlockTitle>
             <Button>
@@ -72,22 +98,41 @@ const Home = () => {
               <ArrowRight />
             </Button>
           </MediaBlock>
-          <MediaBlock size="medium">
+          <MediaBlock size="large">
             <MediaBlockTitle>
               Management solutions designed for control and growth.
             </MediaBlockTitle>
+            <Button>
+              <ArrowRight />
+            </Button>
           </MediaBlock>
-          <MediaBlock size="large">
+          <MediaBlock size="medium">
             <MediaBlockTitle>
               <HighlightText primary>$15 Parking.</HighlightText>
               Taylor Swift at the MB Superdome.
             </MediaBlockTitle>
+            <Button>
+              <ArrowRight />
+            </Button>
+          </MediaBlock>
+          <MediaBlock size="large">
+            <MediaBlockTitle>
+              <HighlightText primary>Plan ahead.</HighlightText>
+              Reserve parking in advance.
+            </MediaBlockTitle>
+            <Button>
+              <ArrowRight />
+            </Button>
           </MediaBlock>
           <MediaBlock size="large">
             <MediaBlockTitle>
               We were born in New Orleans
               <HighlightText yellow>Hospitality is in our DNA</HighlightText>
             </MediaBlockTitle>
+            <Button>
+              <span>Curbside Concierge</span>
+              <ArrowRight />
+            </Button>
           </MediaBlock>
         </MediaBlocksGridContainer>
       </MediaBlocksContainer>
