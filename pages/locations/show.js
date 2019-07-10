@@ -1,6 +1,6 @@
-import React from "react";
-import axios from "axios";
-import Header from "../../components/organisms/Header";
+import React from 'react';
+import axios from 'axios';
+import Header from '../../components/organisms/Header';
 
 class Location extends React.Component {
   static async getInitialProps({ query }) {
@@ -8,7 +8,7 @@ class Location extends React.Component {
       .get(`${process.env.API_URL}/v1/locations/${query.id}.json`)
       .then(response => {
         return {
-          location: response.data
+          location: response.data,
         };
       });
   }

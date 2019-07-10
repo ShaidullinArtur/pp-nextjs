@@ -1,5 +1,5 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
 const StyledButton = styled.button`
   display: inline-flex;
@@ -27,6 +27,10 @@ const StyledButton = styled.button`
 
   svg {
     width: 30px;
+  }
+
+  span {
+    margin-right: 10px;
   }
 `;
 

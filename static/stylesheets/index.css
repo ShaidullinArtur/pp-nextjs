@@ -4,7 +4,11 @@
   --font-size-m: 16px;
   --font-size-l: 20px;
   --font-size-xl: 25px;
-  --font-size-xxl: 40px
+  --font-size-xxl: 40px;
+  --tertiary: #feca0e;
+  --primary: #d21115;
+  --secondary: #000;
+  --white: #fff;
 }
 
 @media screen and (min-width: 500px) {
@@ -14,7 +18,7 @@
     --font-size-m: 18px;
     --font-size-l: 25px;
     --font-size-xl: 35px;
-    --font-size-xxl: 55px
+    --font-size-xxl: 55px;
   }
 }
 
@@ -25,7 +29,7 @@
     --font-size-m: 20px;
     --font-size-l: 30px;
     --font-size-xl: 45px;
-    --font-size-xxl: 80px
+    --font-size-xxl: 80px;
   }
 }
 
@@ -38,7 +42,8 @@ body {
   min-height: 100vh;
   margin: 0;
   padding: 0;
-  font-family: "Gotham A", "Gotham B", "Gotham HTF", "Gotham", Helvetica, sans-serif;
+  font-family: 'Gotham A', 'Gotham B', 'Gotham HTF', 'Gotham', Helvetica,
+    sans-serif;
 }
 
 * {
@@ -50,12 +55,20 @@ button {
   cursor: pointer;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin: 0;
   font-weight: bold;
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   letter-spacing: -0.035em;
 }
 
@@ -88,10 +101,11 @@ h6 {
 }
 
 p {
-  font-size: .875rem;
+  font-size: 0.875rem;
   line-height: 1.5;
 }
 
 a {
   text-decoration: none;
+  transition: all 0.25s ease-in-out 0s;
 }

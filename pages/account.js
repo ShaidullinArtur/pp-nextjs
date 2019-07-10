@@ -1,8 +1,8 @@
-import React, { Component } from "react";
-import axios from "axios";
-import cookie from "js-cookie";
-import Header from "../components/organisms/Header";
-import { Router } from "../routes";
+import React, { Component } from 'react';
+import axios from 'axios';
+import cookie from 'js-cookie';
+import Header from '../components/organisms/Header';
+import { Router } from '../routes';
 
 class Account extends Component {
   constructor(props) {
@@ -12,22 +12,22 @@ class Account extends Component {
   }
 
   static async getInitialProps() {
-    console.log(cookie.get("auth_token"));
+    console.log(cookie.get('auth_token'));
     return axios
       .get(`${process.env.API_URL}/v1/settings.json`, {
-        headers: { "X-AUTH-TOKEN": cookie.get("auth_token") }
+        headers: { 'X-AUTH-TOKEN': cookie.get('auth_token') },
       })
       .then(response => {
         return {
-          profile: response.data.profile
+          profile: response.data.profile,
         };
       });
   }
 
   handleSignOut = event => {
     event.preventDefault();
-    cookie.remove("auth_token");
-    Router.push("/");
+    cookie.remove('auth_token');
+    Router.push('/');
   };
 
   render() {
