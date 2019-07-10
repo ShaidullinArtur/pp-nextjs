@@ -1,19 +1,15 @@
-import React, { Component } from "react";
-import axios from "axios";
-import getConfig from "next/config";
-import Header from "../../components/organisms/Header";
-import { Link } from "../../routes";
-
-const { publicRuntimeConfig } = getConfig();
-const { API_URL } = publicRuntimeConfig;
+import React, { Component } from 'react';
+import axios from 'axios';
+import Header from '../../components/organisms/Header';
+import { Link } from '../../routes';
 
 class Market extends Component {
   static async getInitialProps({ query }) {
     return axios
-      .get(`${API_URL}/v1/markets/${query.id}.json`)
+      .get(`${process.env.API_URL}/v1/markets/${query.id}.json`)
       .then(response => {
         return {
-          market: response.data
+          market: response.data,
         };
       });
   }

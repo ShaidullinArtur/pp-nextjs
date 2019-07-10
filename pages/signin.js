@@ -1,33 +1,29 @@
-import React, { useState } from "react";
-import axios from "axios";
-import getConfig from "next/config";
-import cookie from "js-cookie";
-import Header from "../components/organisms/Header";
-import { Router } from "../routes";
-
-const { publicRuntimeConfig } = getConfig();
-const { API_URL } = publicRuntimeConfig;
+import React, { useState } from 'react';
+import axios from 'axios';
+import cookie from 'js-cookie';
+import Header from '../components/organisms/Header';
+import { Router } from '../routes';
 
 function Signin() {
-  const [login, setLogin] = useState("");
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
+  const [login, setLogin] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
 
   function handleSubmit(event) {
     event.preventDefault();
 
     return axios
-      .post(`${API_URL}/v1/signin.json`, {
+      .post(`${process.env.API_URL}/v1/signin.json`, {
         profile: {
           login,
-          password
-        }
+          password,
+        },
       })
       .then(response => {
-        cookie.set("auth_token", response.data.profile.auth_token, {
-          expires: 365
+        cookie.set('auth_token', response.data.profile.auth_token, {
+          expires: 365,
         });
-        Router.push("/account");
+        Router.push('/account');
       })
       .catch(catchedError => {
         setError(catchedError.response.data.error);
