@@ -1,7 +1,7 @@
-import React, { Component } from "react";
-import axios from "axios";
-import { withRouter } from "next/router";
-import Header from "../../../components/organisms/Header";
+import React, { Component } from 'react';
+import axios from 'axios';
+import { withRouter } from 'next/router';
+import Header from '../../../components/organisms/Header';
 
 class Location extends Component {
   static async getInitialProps({ query }) {
@@ -9,7 +9,7 @@ class Location extends Component {
       .get(`${process.env.API_URL}/v1/locations/${query.location_id}.json`)
       .then(response => {
         return {
-          location: response.data
+          location: response.data,
         };
       });
   }

@@ -1,13 +1,13 @@
-import React, { useState } from "react";
-import axios from "axios";
-import cookie from "js-cookie";
-import Header from "../components/organisms/Header";
-import { Router } from "../routes";
+import React, { useState } from 'react';
+import axios from 'axios';
+import cookie from 'js-cookie';
+import Header from '../components/organisms/Header';
+import { Router } from '../routes';
 
 function Signin() {
-  const [login, setLogin] = useState("");
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
+  const [login, setLogin] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -16,14 +16,14 @@ function Signin() {
       .post(`${process.env.API_URL}/v1/signin.json`, {
         profile: {
           login,
-          password
-        }
+          password,
+        },
       })
       .then(response => {
-        cookie.set("auth_token", response.data.profile.auth_token, {
-          expires: 365
+        cookie.set('auth_token', response.data.profile.auth_token, {
+          expires: 365,
         });
-        Router.push("/account");
+        Router.push('/account');
       })
       .catch(catchedError => {
         setError(catchedError.response.data.error);

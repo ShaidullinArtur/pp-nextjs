@@ -1,7 +1,7 @@
-import React, { Component } from "react";
-import axios from "axios";
-import Header from "../../components/organisms/Header";
-import { Link } from "../../routes";
+import React, { Component } from 'react';
+import axios from 'axios';
+import Header from '../../components/organisms/Header';
+import { Link } from '../../routes';
 
 class Market extends Component {
   static async getInitialProps({ query }) {
@@ -9,7 +9,7 @@ class Market extends Component {
       .get(`${process.env.API_URL}/v1/markets/${query.id}.json`)
       .then(response => {
         return {
-          market: response.data
+          market: response.data,
         };
       });
   }
