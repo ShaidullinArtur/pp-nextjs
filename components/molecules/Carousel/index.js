@@ -1,10 +1,10 @@
-import React from "react";
-import styled from "styled-components";
-import Slider from "react-slick";
-import DestinationSearchForm from "../forms/DestinationSearchForm";
+import React from 'react';
+import styled from 'styled-components';
+import Slider from 'react-slick';
+import DestinationSearchForm from '../forms/DestinationSearchForm';
 
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 const Wrapper = styled.section`
   position: relative;
@@ -30,7 +30,7 @@ const Title = styled.h1`
 const CarouselWrapper = styled.div`
   height: calc(100vh - 90px);
   overflow: hidden;
-
+  background-color: var(--secondary);
   div {
     height: 100%;
   }
@@ -70,8 +70,8 @@ const Carousel = () => {
     lazyLoad: true,
     adaptiveHeight: true,
     fade: true,
-    className: "slick-slider-dots",
-    speed: 500
+    className: 'slick-slider-dots',
+    speed: 500,
   };
 
   return (
