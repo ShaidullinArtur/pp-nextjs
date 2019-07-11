@@ -48,7 +48,7 @@ const DestinationSearchForm = () => (
     <Input
       type="search"
       name="search"
-      placeholder="Destination or Loaction #"
+      placeholder="Destination or Location #"
     />
     <ButtonArrow>
       <ArrowRight />
