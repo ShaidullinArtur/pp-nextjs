@@ -55,6 +55,10 @@ const MediaBlockContent = styled.div`
   flex: 0 0 80%;
   padding: 20px;
 
+  button svg {
+    height: 30px;
+  }
+
   @media (min-width: 901px) {
     padding: 40px;
   }
