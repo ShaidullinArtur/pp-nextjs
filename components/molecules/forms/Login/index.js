@@ -1,7 +1,7 @@
-import React from "react";
-import styled from "styled-components";
-import { ReactComponent as ArrowRight } from "../../../../static/images/icons/arrow_right.svg";
-import Button from "../../../atoms/buttons/Button";
+import React from 'react';
+import styled from 'styled-components';
+import { ReactComponent as ArrowRight } from '../../../../static/images/icons/arrow_right.svg';
+import Button from '../../../atoms/buttons/Button';
 
 const LoginForm = styled.form`
   text-align: left;
@@ -21,21 +21,37 @@ const LoginFormInner = styled.div`
     height: 7.5rem;
     justify-content: center;
   }
+
+  button {
+    border: 2px solid #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+
+    @media (min-width: 501px) {
+      margin: 0;
+      width: 7.5rem;
+      height: 100%;
+      border-top: 2px solid #fff;
+    }
+
+    svg {
+      width: 2.5rem;
+    }
+  }
 `;
 
 const Input = styled.input`
+  padding: 20px;
+  border-radius: 0;
+  border: 2px solid #fff;
   background-color: transparent;
-  color: rgb(255, 255, 255);
+  color: #fff;
   font-size: 1.375rem;
   font-weight: bold;
   height: 3.75rem;
   width: 100%;
-  padding: 20px;
-  border-radius: 0px;
-  border-width: 2px;
-  border-style: solid;
-  border-color: rgb(255, 255, 255);
-  border-image: initial;
 
   @media (min-width: 501px) {
     width: calc(100% - 120px);
@@ -47,6 +63,7 @@ const StyledLink = styled.a`
   text-align: center;
   display: block;
   margin-top: 20px;
+  text-decoration-line: underline;
 
   @media (min-width: 901px) {
     text-align: left;
@@ -57,8 +74,13 @@ const StyledLink = styled.a`
 const Login = () => (
   <LoginForm>
     <LoginFormInner>
-      <Input />
-      <Input />
+      <Input aria-label="Email" type="email" name="email" placeholder="Email" />
+      <Input
+        aria-label="Password"
+        type="password"
+        name="password"
+        placeholder="Password"
+      />
       <Button>
         <ArrowRight />
       </Button>

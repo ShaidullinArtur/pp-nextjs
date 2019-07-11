@@ -1,7 +1,7 @@
-import React from "react";
-import styled from "styled-components";
-import LoginForm from "../../molecules/forms/Login";
-import { ReactComponent as CrossIcon } from "../../../static/images/icons/cross_icon.svg";
+import React from 'react';
+import styled from 'styled-components';
+import LoginForm from '../../molecules/forms/Login';
+import { ReactComponent as CrossIcon } from '../../../static/images/icons/cross_icon.svg';
 
 const LoginNavSection = styled.nav`
   display: flex;
@@ -52,13 +52,29 @@ const Title = styled.h3`
   letter-spacing: -0.035em;
 `;
 
-const StyledLink = styled.a``;
+const LoginContentLinks = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 40px;
 
-const LoginLinks = styled.div``;
+  @media (min-width: 901px) {
+    flex-direction: row;
+  }
+`;
+
+const StyledLink = styled.a`
+  color: var(--white);
+  text-decoration-line: underline;
+
+  &:last-child {
+    margin-left: 40px;
+  }
+`;
 
 const LoginSection = () => {
   const closeLoginSection = () => {
-    document.getElementById("loginSection").style.height = "0%";
+    document.getElementById('loginSection').style.height = '0%';
   };
 
   return (
@@ -72,10 +88,12 @@ const LoginSection = () => {
           vehicles.
         </Title>
         <LoginForm />
-        <LoginLinks>
-          <StyledLink />
-          <StyledLink />
-        </LoginLinks>
+        <LoginContentLinks>
+          <StyledLink>Create an account</StyledLink>
+          <StyledLink>
+            Login to previous Premium Account Manager (PAM)
+          </StyledLink>
+        </LoginContentLinks>
       </LoginContent>
     </LoginNavSection>
   );
