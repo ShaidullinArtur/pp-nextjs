@@ -1,11 +1,13 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
 const StyledButton = styled.button`
   background: none;
   border: none;
   outline: none;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+
   &:active,
   &:hover,
   &:visited {
