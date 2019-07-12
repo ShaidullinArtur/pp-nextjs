@@ -7,7 +7,7 @@ const LoginNavSection = styled.nav`
   display: flex;
   z-index: 10;
   background-color: #d21115;
-  position: fixed;
+  position: sticky;
   top: 0;
   left: 0;
   text-align: center;
@@ -15,7 +15,7 @@ const LoginNavSection = styled.nav`
   align-items: center;
   overflow: hidden;
   width: 100%;
-  height: 0%;
+  height: 0;
   transition: max-height 0.25s ease-in-out;
 `;
 
@@ -74,7 +74,7 @@ const StyledLink = styled.a`
 
 const LoginSection = () => {
   const closeLoginSection = () => {
-    document.getElementById('loginSection').style.height = '0%';
+    document.getElementById('loginSection').style.height = '0';
   };
 
   return (

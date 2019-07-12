@@ -14,15 +14,18 @@ const Wrapper = styled.div`
 
 const Main = styled.main`
   display: flex;
+  position: relative;
   flex-direction: column;
 `;
 
 const MainTemplate = ({ children }) => (
   <Wrapper>
-    <PrimaryNavigation />
     <LoginSection />
-    <Header />
-    <Main>{children}</Main>
+    <PrimaryNavigation />
+    <Main>
+      <Header />
+      {children}
+    </Main>
     <Footer />
   </Wrapper>
 );
