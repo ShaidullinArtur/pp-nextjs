@@ -50,7 +50,6 @@ const MediaBLockTitleSmall = styled.h3`
 const HighlightText = styled.span`
   margin: 0 10px;
   color: ${props =>
-    // eslint-disable-next-line no-nested-ternary
     props.yellow
       ? 'var(--tertiary)'
       : props.primary

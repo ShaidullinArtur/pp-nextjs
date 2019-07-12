@@ -1,7 +1,7 @@
-import React from "react";
-import styled from "styled-components";
-import { Link } from "../../../routes";
-import { ReactComponent as CrossIcon } from "../../../static/images/icons/cross_icon.svg";
+import React from 'react';
+import styled from 'styled-components';
+import { Link } from '../../../routes';
+import { ReactComponent as CrossIcon } from '../../../static/images/icons/cross_icon.svg';
 
 const OverlayNav = styled.nav`
   display: flex;
@@ -55,6 +55,7 @@ const Button = styled.button`
   outline: none;
   cursor: pointer;
   position: absolute;
+  -webkit-tap-highlight-color: transparent;
 
   &:active,
   &:hover,
@@ -69,7 +70,7 @@ const Button = styled.button`
 
 const PrimaryNavigation = () => {
   const handleClick = () => {
-    document.getElementById("overlay").style.height = "0%";
+    document.getElementById('overlay').style.height = '0%';
   };
 
   return (
