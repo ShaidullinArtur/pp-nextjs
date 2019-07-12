@@ -1,7 +1,7 @@
-import React from 'react';
-import styled from 'styled-components';
-import { ReactComponent as ArrowRight } from '../../../../static/images/icons/arrow_right.svg';
-import Button from '../../../atoms/buttons/Button';
+import React from "react";
+import styled from "styled-components";
+import { ReactComponent as ArrowRight } from "../../../../static/images/icons/arrow_right.svg";
+import Button from "../../../atoms/buttons/Button";
 
 const LoginForm = styled.form`
   text-align: left;
@@ -28,6 +28,8 @@ const LoginFormInner = styled.div`
     justify-content: center;
     align-items: center;
     background-color: transparent;
+    margin: 0 auto;
+    border-top: 0;
 
     @media (min-width: 501px) {
       margin: 0;
@@ -37,7 +39,8 @@ const LoginFormInner = styled.div`
     }
 
     svg {
-      width: 2.5rem;
+      width: 40px;
+      height: 40px;
     }
   }
 `;
@@ -52,6 +55,10 @@ const Input = styled.input`
   font-weight: bold;
   height: 3.75rem;
   width: 100%;
+
+  &:not(:first-child) {
+    border-top: 0;
+  }
 
   @media (min-width: 501px) {
     width: calc(100% - 120px);

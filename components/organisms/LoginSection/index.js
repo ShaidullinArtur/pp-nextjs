@@ -1,7 +1,7 @@
-import React from 'react';
-import styled from 'styled-components';
-import LoginForm from '../../molecules/forms/Login';
-import { ReactComponent as CrossIcon } from '../../../static/images/icons/cross_icon.svg';
+import React from "react";
+import styled from "styled-components";
+import LoginForm from "../../molecules/forms/Login";
+import { ReactComponent as CrossIcon } from "../../../static/images/icons/cross_icon.svg";
 
 const LoginNavSection = styled.nav`
   display: flex;
@@ -16,6 +16,7 @@ const LoginNavSection = styled.nav`
   overflow: hidden;
   width: 100%;
   height: 0;
+  max-height: 100vh;
   transition: max-height 0.25s ease-in-out;
 `;
 
@@ -39,7 +40,7 @@ const Button = styled.button`
 
 const LoginContent = styled.div`
   max-width: 56.25rem;
-  margin: 0 auto;
+  margin: 40px auto 0;
   padding: 40px;
   width: 100%;
   position: relative;
@@ -66,15 +67,20 @@ const LoginContentLinks = styled.div`
 const StyledLink = styled.a`
   color: var(--white);
   text-decoration-line: underline;
+  margin-top: 40px;
 
-  &:last-child {
-    margin-left: 40px;
+  @media (min-width: 901px) {
+    margin-top: 0;
+
+    &:last-child {
+      margin-left: 40px;
+    }
   }
 `;
 
 const LoginSection = () => {
   const closeLoginSection = () => {
-    document.getElementById('loginSection').style.height = '0';
+    document.getElementById("loginSection").style.height = "0";
   };
 
   return (

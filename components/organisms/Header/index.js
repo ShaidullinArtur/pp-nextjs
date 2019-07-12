@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
-import styled from 'styled-components';
-import MenuButton from '../../atoms/buttons/MenuButton';
-import Logo from '../../atoms/Logo';
-import { ReactComponent as SignInIcon } from '../../../static/images/icons/signin_icon.svg';
+import React, { Component } from "react";
+import styled from "styled-components";
+import MenuButton from "../../atoms/buttons/MenuButton";
+import Logo from "../../atoms/Logo";
+import { ReactComponent as SignInIcon } from "../../../static/images/icons/signin_icon.svg";
 
 const StyledHeader = styled.header`
   display: flex;
@@ -68,11 +68,11 @@ const LogoIcon = styled.span`
 
 class Header extends Component {
   openPrimaryNavigation = () => {
-    document.getElementById('overlay').style.height = '100%';
+    document.getElementById("overlay").style.height = "100vh";
   };
 
   openLoginSection = () => {
-    document.getElementById('loginSection').style.height = '60vh';
+    document.getElementById("loginSection").style.height = "100%";
   };
 
   render() {
