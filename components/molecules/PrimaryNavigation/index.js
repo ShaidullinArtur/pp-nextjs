@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from '../../../routes';
 import { ReactComponent as CrossIcon } from '../../../static/images/icons/cross_icon.svg';
+import Button from '../../atoms/buttons/Button';
 
 const OverlayNav = styled.nav`
   display: flex;
@@ -20,6 +21,19 @@ const OverlayNav = styled.nav`
 
   @media screen and (max-height: 450px) {
     overflow-y: auto;
+  }
+
+  button {
+    opacity: 1;
+    visibility: visible;
+    display: flex;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 3.125rem;
+    height: 3.125rem;
+    flex-direction: column;
+    justify-content: center;
   }
 `;
 
@@ -47,25 +61,6 @@ const OverlayNavLink = styled.a`
   &:visited {
     color: #fff;
   }
-`;
-
-const Button = styled.button`
-  background: none;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  position: absolute;
-  -webkit-tap-highlight-color: transparent;
-
-  &:active,
-  &:hover,
-  &:visited {
-    background: none;
-  }
-  right: 0;
-  top: 0;
-  width: 5rem;
-  height: 5rem;
 `;
 
 const PrimaryNavigation = () => {
