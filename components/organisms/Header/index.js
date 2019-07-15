@@ -1,8 +1,8 @@
-import React, { Component } from "react";
-import styled from "styled-components";
-import MenuButton from "../../atoms/buttons/MenuButton";
-import Logo from "../../atoms/Logo";
-import { ReactComponent as SignInIcon } from "../../../static/images/icons/signin_icon.svg";
+import React from 'react';
+import styled from 'styled-components';
+import MenuButton from '../../atoms/buttons/MenuButton';
+import Logo from '../../atoms/Logo';
+import { ReactComponent as SignInIcon } from '../../../static/images/icons/signin_icon.svg';
 
 const StyledHeader = styled.header`
   display: flex;
@@ -66,31 +66,21 @@ const LogoIcon = styled.span`
   }
 `;
 
-class Header extends Component {
-  openPrimaryNavigation = () => {
-    document.getElementById("overlay").style.height = "100vh";
-  };
-
-  openLoginSection = () => {
-    document.getElementById("loginSection").style.height = "100%";
-  };
-
-  render() {
-    return (
-      <StyledHeader>
-        <Logo>
-          <LogoIcon />
-        </Logo>
-        <HeaderRight>
-          <SignInWrapper>
-            <SignInIcon />
-            <SignInLabel onClick={this.openLoginSection}>Sign in</SignInLabel>
-          </SignInWrapper>
-          <MenuButton onClick={this.openPrimaryNavigation} />
-        </HeaderRight>
-      </StyledHeader>
-    );
-  }
-}
+const Header = ({ openLoginSection, openPrimaryNavigation }) => {
+  return (
+    <StyledHeader>
+      <Logo>
+        <LogoIcon />
+      </Logo>
+      <HeaderRight>
+        <SignInWrapper>
+          <SignInIcon />
+          <SignInLabel onClick={openLoginSection}>Sign in</SignInLabel>
+        </SignInWrapper>
+        <MenuButton onClick={openPrimaryNavigation} />
+      </HeaderRight>
+    </StyledHeader>
+  );
+};
 
 export default Header;

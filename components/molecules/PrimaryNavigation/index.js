@@ -8,7 +8,7 @@ const OverlayNav = styled.nav`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 0%;
+  height: ${props => (props.isOpen ? '100vh' : 0)};
   width: 100%;
   position: fixed;
   z-index: 99;
@@ -63,14 +63,14 @@ const OverlayNavLink = styled.a`
   }
 `;
 
-const PrimaryNavigation = () => {
-  const handleClick = () => {
-    document.getElementById('overlay').style.height = '0%';
+const PrimaryNavigation = ({ close, isOpen }) => {
+  const closePrimaryNavigation = () => {
+    close();
   };
 
   return (
-    <OverlayNav id="overlay">
-      <Button onClick={handleClick}>
+    <OverlayNav isOpen={isOpen}>
+      <Button onClick={closePrimaryNavigation}>
         <CrossIcon />
       </Button>
       <OverlayNavContent>
