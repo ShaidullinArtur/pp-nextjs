@@ -5,12 +5,12 @@
     "start": "NODE_ENV=production node server.js",
     "heroku-postbuild": "npm run build",
     "lint": "eslint --fix --ext .js pages components",
-    "lint:css": "stylelint './*.js'"
+    "lint:css": "stylelint './*.js'",
+    "test": "jest"
   },
   "dependencies": {
     "@zeit/next-css": "^1.0.1",
     "axios": "^0.19.0",
-    "cowsay-browser": "^1.1.8",
     "dotenv": "^8.0.0",
     "js-cookie": "^2.2.0",
     "next": "^8.1.0",
@@ -30,6 +30,8 @@
   "devDependencies": {
     "babel-eslint": "^10.0.2",
     "babel-plugin-styled-components": "^1.10.2",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
     "eslint": "^6.0.1",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-config-import": "^0.13.0",
@@ -39,6 +41,10 @@
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-react": "^7.14.2",
     "husky": "^2.7.0",
+    "jest": "^24.8.0",
+    "jest-dom": "^4.0.0",
+    "jest-environment-enzyme": "^7.0.2",
+    "jest-styled-components": "^6.3.3",
     "prettier": "^1.18.2",
     "pretty-quick": "^1.11.1",
     "stylelint": "^10.1.0",
