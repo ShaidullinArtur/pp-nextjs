@@ -1,7 +1,7 @@
-import React from "react";
-import styled from "styled-components";
-import LoginForm from "../../molecules/forms/Login";
-import { ReactComponent as CrossIcon } from "../../../static/images/icons/cross_icon.svg";
+import React from 'react';
+import styled from 'styled-components';
+import LoginForm from '../../molecules/forms/Login';
+import { ReactComponent as CrossIcon } from '../../../static/images/icons/cross_icon.svg';
 
 const LoginNavSection = styled.nav`
   display: flex;
@@ -15,7 +15,7 @@ const LoginNavSection = styled.nav`
   align-items: center;
   overflow: hidden;
   width: 100%;
-  height: 0;
+  height: ${props => (props.isOpen ? '100%' : '0')};
   max-height: 100vh;
   transition: max-height 0.25s ease-in-out;
 `;
@@ -78,27 +78,22 @@ const StyledLink = styled.a`
   }
 `;
 
-const LoginSection = () => {
+const LoginSection = ({ close, isOpen }) => {
   const closeLoginSection = () => {
-    document.getElementById("loginSection").style.height = "0";
+    close();
   };
 
   return (
-    <LoginNavSection id="loginSection">
-      <Button onClick={closeLoginSection}>
-        <CrossIcon />
+    <LoginNavSection isOpen={isOpen}>
+      <Button>
+        <CrossIcon onClick={closeLoginSection} />
       </Button>
       <LoginContent>
-        <Title>
-          Sign in to manage hourly parking, subscriptions, reservations and
-          vehicles.
-        </Title>
+        <Title>Sign in to manage hourly parking, subscriptions, reservations and vehicles.</Title>
         <LoginForm />
         <LoginContentLinks>
           <StyledLink>Create an account</StyledLink>
-          <StyledLink>
-            Login to previous Premium Account Manager (PAM)
-          </StyledLink>
+          <StyledLink>Login to previous Premium Account Manager (PAM)</StyledLink>
         </LoginContentLinks>
       </LoginContent>
     </LoginNavSection>
