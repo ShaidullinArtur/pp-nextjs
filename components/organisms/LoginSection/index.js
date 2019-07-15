@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import LoginForm from '../../molecules/forms/Login';
 import { ReactComponent as CrossIcon } from '../../../static/images/icons/cross_icon.svg';
+import Button from '../../atoms/buttons/Button';
 
 const LoginNavSection = styled.nav`
   display: flex;
@@ -18,24 +19,18 @@ const LoginNavSection = styled.nav`
   height: ${props => (props.isOpen ? '100%' : '0')};
   max-height: 100vh;
   transition: max-height 0.25s ease-in-out;
-`;
 
-const Button = styled.button`
-  background: none;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  position: absolute;
-
-  &:active,
-  &:hover,
-  &:visited {
-    background: none;
+  button:first-child {
+    right: 10px;
+    top: 10px;
+    width: 3.125rem;
+    height: 3.125rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
   }
-  right: 0;
-  top: 0;
-  width: 5rem;
-  height: 5rem;
 `;
 
 const LoginContent = styled.div`
