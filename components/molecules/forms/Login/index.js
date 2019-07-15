@@ -1,7 +1,7 @@
-import React from "react";
-import styled from "styled-components";
-import { ReactComponent as ArrowRight } from "../../../../static/images/icons/arrow_right.svg";
-import Button from "../../../atoms/buttons/Button";
+import React from 'react';
+import styled from 'styled-components';
+import { ReactComponent as ArrowRight } from '../../../../static/images/icons/arrow_right.svg';
+import Button from '../../../atoms/buttons/Button';
 
 const LoginForm = styled.form`
   text-align: left;
@@ -55,9 +55,14 @@ const Input = styled.input`
   font-weight: bold;
   height: 3.75rem;
   width: 100%;
+  outline: none;
 
   &:not(:first-child) {
     border-top: 0;
+  }
+
+  &::placeholder {
+    color: #fff;
   }
 
   @media (min-width: 501px) {
@@ -82,12 +87,7 @@ const Login = () => (
   <LoginForm>
     <LoginFormInner>
       <Input aria-label="Email" type="email" name="email" placeholder="Email" />
-      <Input
-        aria-label="Password"
-        type="password"
-        name="password"
-        placeholder="Password"
-      />
+      <Input aria-label="Password" type="password" name="password" placeholder="Password" />
       <Button>
         <ArrowRight />
       </Button>
