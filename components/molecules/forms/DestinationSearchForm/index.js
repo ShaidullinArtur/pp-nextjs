@@ -1,10 +1,10 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
-import Select from "../../../atoms/forms/Select";
-import Input from "../../../atoms/forms/Input";
-import ButtonArrow from "../../../atoms/buttons/Button";
-import { ReactComponent as ArrowRight } from "../../../../static/images/icons/arrow_right.svg";
+import Select from '../../../atoms/forms/Select';
+import Input from '../../../atoms/forms/Input';
+import ButtonArrow from '../../../atoms/buttons/Button';
+import { ReactComponent as ArrowRight } from '../../../../static/images/icons/arrow_right.svg';
 
 const Form = styled.form`
   display: flex;

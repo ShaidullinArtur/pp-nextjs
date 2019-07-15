@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import Header from '../../organisms/Header';
 import Footer from '../../organisms/Footer';
 import PrimaryNavigation from '../../molecules/PrimaryNavigation';
+import LoginSection from '../../organisms/LoginSection';
 
 const Wrapper = styled.div`
   display: flex;
@@ -13,14 +14,18 @@ const Wrapper = styled.div`
 
 const Main = styled.main`
   display: flex;
+  position: relative;
   flex-direction: column;
 `;
 
 const MainTemplate = ({ children }) => (
   <Wrapper>
+    <LoginSection />
     <PrimaryNavigation />
-    <Header />
-    <Main>{children}</Main>
+    <Main>
+      <Header />
+      {children}
+    </Main>
     <Footer />
   </Wrapper>
 );
